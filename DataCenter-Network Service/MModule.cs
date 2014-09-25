@@ -52,6 +52,10 @@ namespace DataCenterNetworkService
                 }
             }
             RegKey.CreateSubKey("DataCenter");
+
+            RegKey = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\DataCenter", true);
+            RegKey.SetValue("GeneralPort", "8090");
+            RegKey.SetValue("DeletedFilesPath", @"C:\DeletedFiles");
         }
         public static string GetRegValue(string ValueName)
         {
